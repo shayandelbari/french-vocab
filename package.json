@@ -48,6 +48,7 @@
 		"vite": "^7.2.6"
 	},
 	"dependencies": {
-		"@neondatabase/serverless": "^1.0.2"
+		"@neondatabase/serverless": "^1.0.2",
+		"svelte-clerk": "^0.20.2"
 	}
 }

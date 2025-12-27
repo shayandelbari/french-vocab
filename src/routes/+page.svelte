@@ -1,2 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	import { SignedIn, SignedOut, SignInButton, UserButton } from 'svelte-clerk';
+</script>
+
+<template>
+	<header>
+		<SignedOut>
+			<SignInButton />
+		</SignedOut>
+		<SignedIn>
+			<UserButton />
+		</SignedIn>
+	</header>
+</template>
