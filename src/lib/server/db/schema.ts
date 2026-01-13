@@ -11,6 +11,8 @@ import {
 	primaryKey
 } from 'drizzle-orm/pg-core';
 
+import { createInsertSchema, createSelectSchema } from 'drizzle-zod';
+
 export const wordKindEnum = pgEnum('word_kind', [
 	'noun',
 	'verb',
@@ -153,4 +155,23 @@ export const practiceLogs = pgTable(
 		index('idx_practice_logs_word').on(t.wordId)
 	]
 );
+
+// Zod schemas for validation
+export const wordSelectSchema = createSelectSchema(words);
+export const wordInsertSchema = createInsertSchema(words);
+
+export const adminListSelectSchema = createSelectSchema(adminLists);
+export const adminListInsertSchema = createInsertSchema(adminLists);
+
+export const adminListWordSelectSchema = createSelectSchema(adminListWords);
+export const adminListWordInsertSchema = createInsertSchema(adminListWords);
+
+export const userWordSelectSchema = createSelectSchema(userWords);
+export const userWordInsertSchema = createInsertSchema(userWords);
+
+export const exposureSelectSchema = createSelectSchema(exposures);
+export const exposureInsertSchema = createInsertSchema(exposures);
+
+export const practiceLogSelectSchema = createSelectSchema(practiceLogs);
+export const practiceLogInsertSchema = createInsertSchema(practiceLogs);
 
